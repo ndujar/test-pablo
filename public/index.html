@@ -476,7 +476,7 @@
       accessData.sessionId = sessionId;
     }
 
-    await fetch(`${API_BASE_URL}/api/session/start`, {
+    await fetch(`${API_BASE_URL}/session/start`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' }
     });
@@ -497,7 +497,7 @@
         // Inicializar sesión al cargar la página
         async function initializeTelemetry() {
             try {
-                const response = await fetch(`${API_BASE_URL}/api/session/start`, {
+                const response = await fetch(`${API_BASE_URL}/session/start`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' }
                 });
@@ -521,7 +521,7 @@
             detectionCounter = 0;
             
             try {
-                await fetch(`${API_BASE_URL}/api/detection/record`, {
+                await fetch(`${API_BASE_URL}/detection/record`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -543,7 +543,7 @@
             if (!sessionId || !telemetryEnabled) return;
             
             try {
-                await fetch(`${API_BASE_URL}/api/interaction/record`, {
+                await fetch(`${API_BASE_URL}/interaction/record`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -564,7 +564,7 @@
             if (!sessionId || !telemetryEnabled) return;
             
             try {
-                await fetch(`${API_BASE_URL}/api/session/end`, {
+                await fetch(`${API_BASE_URL}/session/end`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ sessionId })
